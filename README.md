@@ -2,4 +2,4 @@
 
 ## Build
 
-    make SERVICE=<php-base | ...> [VERSION=x.y]
+    make -e SERVICE=<php-base | ...> [VERSION=x.y]

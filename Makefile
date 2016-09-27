@@ -18,9 +18,21 @@ REPO = kmcms-$(SERVICE)
 NAME = kmcms-$(SERVICE)
 INSTANCE = default
 
-.PHONY: build
+.PHONY: build shell release versions
 
 build:
 	docker build --file $(FILE) -t $(NS)/$(REPO):$(VERSION) $(CONTEXT)
+
+push:
+	docker push $(NS)/$(REPO):$(VERSION)
+
+shell:
+	docker run --rm --name $(NAME)-$(INSTANCE) --interactive --tty $(NS)/$(REPO):$(VERSION) /bin/bash
+
+release:
+	make push -e SERVICE=$(SERVICE) VERSION=$(VERSION)
+
+versions:
+	docker images | grep $(NS)
 
 default: build

@@ -1,0 +1,3 @@
+// recommends must be installed (e.g. wget -> ca-certificates)
+APT::Install-Recommends "true";
+APT::Install-Suggests "false";
