@@ -9,6 +9,8 @@ RUN apt-get -y update && \
     apt-get -y autoremove --purge && \
     rm -rf /var/lib/apt/lists/*
 
+COPY rootfs/ /
+
 WORKDIR /var/www/html
 
 EXPOSE 9000
