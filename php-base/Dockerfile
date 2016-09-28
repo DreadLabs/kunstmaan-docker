@@ -32,3 +32,6 @@ RUN apt-get -y update && \
         php7.0-zip && \
     apt-get purge -y --auto-remove $BUILD_PACKAGES && \
     rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT ["php"]
+CMD ["-a"]

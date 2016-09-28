@@ -15,4 +15,5 @@ WORKDIR /var/www/html
 
 EXPOSE 9000
 
-CMD ["php-fpm7.0"]
+ENTRYPOINT ["php-fpm7.0"]
+CMD []
