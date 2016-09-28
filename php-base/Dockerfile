@@ -12,6 +12,7 @@ RUN apt-get -y update && \
     wget https://www.dotdeb.org/dotdeb.gpg && \
     apt-key add dotdeb.gpg && \
     rm dotdeb.gpg && \
+    apt-get -y clean && \
     apt-get -y update && \
     apt-get -y install \
         php7.0-apcu \
@@ -19,6 +20,7 @@ RUN apt-get -y update && \
         php7.0-common \
         php7.0-curl \
         php7.0-gd \
+        php7.0-imagick \
         php7.0-intl \
         php7.0-json \
         php7.0-mbstring \
